@@ -48,6 +48,17 @@ public class JobTest {
     public void testJobsForEquality() {
         assertFalse(test_job4.equals(test_job5));
     }
+
+    @Test
+    public void testToStringBlankLines(){
+        assertEquals(test_job3.toString().charAt(0), '\n');
+        assertEquals(test_job3.toString().charAt(test_job3.toString().length()-1), '\n');
+    }
+
+    @Test
+    public void testToStringFormat(){
+        assertEquals("\nID: 3\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence\n", test_job3.toString());
+    }
 }
 
 

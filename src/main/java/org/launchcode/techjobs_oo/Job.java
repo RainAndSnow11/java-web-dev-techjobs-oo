@@ -1,6 +1,10 @@
 package org.launchcode.techjobs_oo;
 
-import java.util.Objects;
+import java.lang.reflect.Constructor;
+import java.util.*;
+
+import static java.util.Objects.isNull;
+
 
 public class Job {
 
@@ -45,6 +49,39 @@ public class Job {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        String returnString = "\n";
+        returnString += "ID: " + getId() + "\n";
+        if (name == "") {
+            returnString += "Name: " + "Data not available" + "\n";
+        } else {
+            returnString += "Name: " + getName() + "\n";
+        }
+        if (employer.getValue() == "") {
+            returnString += "Employer: " + "Data not available" + "\n";
+        } else {
+            returnString += "Employer: " + getEmployer() + "\n";
+        }
+        if (location.getValue() == "") {
+            returnString += "Location: " + "Data not available" + "\n";
+        } else {
+            returnString += "Location: " + getLocation() + "\n";
+        }
+        if(positionType.getValue() == "") {
+            returnString += "Position Type: " + "Data not available" + "\n";
+        } else {
+            returnString += "Position Type: " + getPositionType() + "\n";
+        }
+        if (coreCompetency.getValue() == "") {
+            returnString += "Core Competency: " + "Data not available" + "\n";
+        } else {
+            returnString += "Core Competency: " + getCoreCompetency() + "\n";
+        }
+
+        return returnString;
     }
 
 
